@@ -5,7 +5,7 @@ import pandas
 import os
 
 my_mail = os.environ.get("MY_MAIL")
-password = os.environ.get(MY_PASSWORD")
+password = os.environ.get("MY_PASSWORD")
 
 now = dt.datetime.now()
 day_of_week = now.weekday()
