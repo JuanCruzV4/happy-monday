@@ -11,7 +11,7 @@ now = dt.datetime.now()
 day_of_week = now.weekday()
 data = pandas.read_csv("mails.csv")
 mails_dict = {(data_row["name"], data_row["email"]): data_row for (index, data_row) in data.iterrows()}
-if day_of_week == 3:
+if day_of_week == 0:
     with open("quotes.txt", "r", encoding="utf-8") as file:
         file = file.readlines()
         quote = random.choice(file)
