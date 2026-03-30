@@ -44,6 +44,6 @@ jobs:
           MY_MAIL: ${{ secrets.MY_MAIL }}
           MY_PASSWORD: ${{ secrets.MY_PASSWORD }}
           MY_APPID: ${{ secrets.MY_APPID }}
-          MY_LAT: ${{ secrets.MY_LAT }}
-          MY_LON: ${{ secrets.MY_LON }}
+          MY_LAT: ${{ vars.MY_LAT }}
+          MY_LON: ${{ vars.MY_LON }}
         run: python main.py
