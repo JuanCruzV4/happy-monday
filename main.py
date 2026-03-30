@@ -38,8 +38,7 @@ mails_dict = {(data_row["name"], data_row["email"]): data_row for (index, data_r
 if day_of_week == 0:
     with open("quotes.txt", "r", encoding="utf-8") as file:
         file = file.readlines()
-        quote2 = random.choice(file)
-        quote = html.unescape(quote2)
+        quote = random.choice(file)
         for clave, valor in mails_dict.items():
             try:
                 if rain:
@@ -49,7 +48,7 @@ if day_of_week == 0:
                         connection.sendmail(
                             from_addr=my_mail,
                             to_addrs=clave[1],
-                            msg=f"Subject:Monday Motivation to {clave[0]}\n\n{quote}\n\n Hoy llueve! Llevate ☂️".encode("utf-8")
+                            msg=f"Subject:Monday Motivation to {clave[0]}\n\n{html.unescape(quote)}\n\n Hoy llueve! Llevate ☂️".encode("utf-8")
                         )
                 else:
                      with smtplib.SMTP("smtp.gmail.com") as connection:
