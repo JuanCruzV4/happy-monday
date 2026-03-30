@@ -25,6 +25,7 @@ jobs:
         env:
           MY_MAIL: ${{ secrets.MY_MAIL }}
           MY_PASSWORD: ${{ secrets.MY_PASSWORD }}
+          MY_APPID: ${{ secrets.MY_APPID }}
         run: |
           if [ -z "$MY_MAIL" ]; then
             echo "MY_MAIL secret is not set!"
@@ -40,6 +41,14 @@ jobs:
             exit 1
           else
             echo "MY_PASSWORD is configured"
+          fi
+
+          if [ -z "$MY_APPID" ]; then
+            echo "MY_APPID secret is not set!"
+            echo "Go to Settings > Secrets > Actions and add it."
+            exit 1
+          else
+            echo "MY_APPID is configured"
           fi
 
           echo ""
