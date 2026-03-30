@@ -48,7 +48,7 @@ if day_of_week == 0:
                         connection.sendmail(
                             from_addr=my_mail,
                             to_addrs=clave[1],
-                            msg=f"Subject:Monday Motivation to {clave[0]}\n\n{html.unescape(quote)}\n\n Hoy llueve! Llevate ☂️"
+                            msg=f"Subject:Monday Motivation to {clave[0]}\n\n{html.unescape(quote)}\n\n Hoy llueve! Llevate paraguas".encode("utf-8")
                         )
                 else:
                      with smtplib.SMTP("smtp.gmail.com") as connection:
@@ -57,7 +57,7 @@ if day_of_week == 0:
                         connection.sendmail(
                             from_addr=my_mail,
                             to_addrs=clave[1],
-                            msg=f"Subject:Monday Motivation to {clave[0]}\n\n{quote}"
+                            msg=f"Subject:Monday Motivation to {clave[0]}\n\n{quote}".encode("utf-8")
                         )
             except Exception as e:
                 print("Error sendind email",e)
@@ -71,7 +71,7 @@ else:
                     connection.sendmail(
                         from_addr=my_mail,
                         to_addrs=clave[1],
-                        msg=f"Subject:Ojota que hoy llueve\n\n Hoy llueve! Llevate ☂️"
+                        msg=f"Subject:Ojota que hoy llueve\n\n Hoy llueve! Llevate paraguas".encode("utf-8")
                         )
             except Exception as e:
                 print("Error sendind email",e)
